@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'Components/Start.dart';
 import 'Components/CalendarView.dart';
-void main() => runApp(MyApp());
+import 'package:intl/date_symbol_data_local.dart';
+
+void main() { 
+  initializeDateFormatting().then((_) => runApp(MyApp()));
+}
 
 class MyApp extends StatelessWidget {
  @override
@@ -11,7 +15,7 @@ class MyApp extends StatelessWidget {
      initialRoute: '/',
      routes: {
        '/': (context) => Start(),
-       '/second': (context) => CalendarView()
+       '/second': (context) => SecondScreen()
      },
    );
  }

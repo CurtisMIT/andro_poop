@@ -1,37 +1,62 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Start extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
+
+    final String assetName = 'assets/Logo.svg';
+
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(top: 400.0, left: 35.0, bottom: 100.0),
+        padding: const EdgeInsets.only(top: 440.0, left: 35.0, bottom: 50.0),
         child: Container(
             alignment: Alignment.bottomLeft,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  child: Row(
                     children: <Widget>[
-                      Text(
-                        'Oh Sh*t!',
-                        style: TextStyle(
-                            fontSize: 40,
-                            color: Colors.teal[900],
-                            fontWeight: FontWeight.bold),
-                      ),
                       SizedBox(
-                        height: 50,
-                        width: 200,
-                        child: Text(
-                          'Enter your health data to get started!',
-                          style: TextStyle(
-                            fontSize: 20,
+                        width: 10,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          SvgPicture.asset(
+                            assetName,
+                            semanticsLabel: 'Logo',
                           ),
-                        ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            'Oh Sh*t!',
+                            style: TextStyle(
+                                fontSize: 36,
+                                color: Colors.teal[900],
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Ubuntu'
+                              ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          SizedBox(
+                            height: 50,
+                            width: 200,
+                            child: Text(
+                              'Enter your health data to get started!',
+                              style: TextStyle(
+                                fontSize: 16,
+                              ),
+                            ),
+                          )
+                        ],
                       )
                     ],
                   ),
@@ -40,7 +65,10 @@ class Start extends StatelessWidget {
                   name: 'Enter Health Data',
                   color: Colors.teal[900],
                   txtcolor: Colors.white,
-                  onPressed: () => Navigator.pushNamed(context, '/second'),
+                  onPressed: () => Navigator.of(context).pushNamed('/second'),
+                ),
+                SizedBox(
+                  height: 10,
                 ),
                 TestButton(
                   name: 'Find me a toilet first',
@@ -73,12 +101,12 @@ class TestButton extends StatelessWidget {
         ),
       ),
       onPressed: onPressed,
-      padding: const EdgeInsets.symmetric(vertical: 2.0, horizontal: 5.0),
+      padding: const EdgeInsets.symmetric(vertical: 2.0,),
       color: color,
       textColor: txtcolor,
       shape: StadiumBorder(side: BorderSide(color: Colors.teal[900])),
-      height: 65,
-      minWidth: 255,
+      height: 70,
+      minWidth: 300,
       elevation: 0,
     );
   }
