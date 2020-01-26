@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Start extends StatelessWidget {
 
@@ -36,12 +37,13 @@ class Start extends StatelessWidget {
                           ),
                           Text(
                             'Oh Sh*t!',
-                            style: TextStyle(
-                                fontSize: 36,
+                            style: GoogleFonts.ubuntu(
+                              textStyle: TextStyle(
+                                fontSize: 40,
                                 color: Colors.teal[900],
                                 fontWeight: FontWeight.bold,
-                                fontFamily: 'Ubuntu'
                               ),
+                            )
                           ),
                           SizedBox(
                             height: 10,
@@ -51,9 +53,11 @@ class Start extends StatelessWidget {
                             width: 200,
                             child: Text(
                               'Enter your health data to get started!',
-                              style: TextStyle(
-                                fontSize: 16,
-                              ),
+                              style: GoogleFonts.ubuntu(
+                                textStyle: TextStyle(
+                                  fontSize: 16,
+                                ),
+                              )
                             ),
                           )
                         ],
@@ -96,9 +100,11 @@ class TestButton extends StatelessWidget {
     return MaterialButton(
       child: Text(
         '$name',
-        style: TextStyle(
-          fontSize: 20
-        ),
+        style: GoogleFonts.ubuntu(
+          textStyle: TextStyle(
+            fontSize: 20
+          ),
+        )
       ),
       onPressed: onPressed,
       padding: const EdgeInsets.symmetric(vertical: 2.0,),
