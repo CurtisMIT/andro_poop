@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'Components/Start.dart';
+//import 'Components/Start.dart';
 import 'Components/CalendarView.dart';
+
+import 'Components/Symptoms/Poop/Main.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -10,7 +13,7 @@ class MyApp extends StatelessWidget {
      title: 'Baby Names',
      initialRoute: '/',
      routes: {
-       '/': (context) => Start(),
+       '/': (context) => Main(),
        '/second': (context) => CalendarView()
      },
    );
